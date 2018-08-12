@@ -1,0 +1,16 @@
+{
+  "extends": ["airbnb-base"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "source": "module"
+  },
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "no-console": "off",
+    "no-use-before-define": "off",
+    "comma-dangle": ["error", "never"],
+    "require-jsdoc": ["error"]
+  }
+}
