@@ -1,5 +1,5 @@
 {
-  "name": "@cbrews/webserver",
+  "name": "cbrews.webserver",
   "version": "1.0.0",
   "description": "Basic webserver wrapper",
   "main": "webserver.js",
