@@ -1,9 +1,9 @@
 // Unit under test
-const Webserver = require('../webserver');
+const Config = require('../lib/config');
 
 test('create empty config', () => {
-  const web = new Webserver();
-  expect(web.getConfig()).toEqual({
+  const config = new Config();
+  expect(config.get()).toEqual({
     app: 'webserver',
     port: 80,
     sockets: false,
@@ -13,14 +13,14 @@ test('create empty config', () => {
 });
 
 test('create basic config', () => {
-  const web = new Webserver({
+  const config = new Config({
     app: 'myapp',
     port: 8080
   });
-  expect(web.getConfig()).toEqual({
+  expect(config.get()).toEqual({
     app: 'myapp',
     port: 8080,
-    sockers: false,
+    sockets: false,
     cors: null,
     templateEngine: null
   });

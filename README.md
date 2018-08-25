@@ -8,15 +8,31 @@ This application is a basic api-based initializable webserver wrapper for:
 
 Initialize a webserver:
 ```
+const options = {
+  port: 4001
+}
 const web = new Webserver(options);
 ```
 
 Create a router:
 ```
-const router = web.getRouter('resource');
+const router = web.getRouter('myroute');
 ```
 
-Create a route:
+Create a route (with json handling):
 ```
-router.get('object', (req, resp) => resp.json({success: true}))
+router.get('mypath', web.handle(req => ({success: true})));
+```
+
+Start the server:
+```
+web.start();
+```
+
+```
+curl localhost:4001/myroute/mypath
+
+// {
+//   "success": "true"
+// }
 ```
