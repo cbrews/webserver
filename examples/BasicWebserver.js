@@ -1,4 +1,4 @@
-const Webserver = require('../webserver');
+const Webserver = require('../lib/webserver');
 
 // Initialize webserver with options
 const web = new Webserver({
@@ -9,7 +9,7 @@ const web = new Webserver({
 const router = web.getRouter('myroute');
 
 router.get('/myobject', (req, resp) => {
-  resp.json({success: true})
+  resp.json({ success: true });
 });
 
 web.start();
